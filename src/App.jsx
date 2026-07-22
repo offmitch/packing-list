@@ -1,52 +1,26 @@
-import "./App.css";
+import "./styles/App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Home from "./pages/Home";
+import NewList from "./pages/NewList"
+import Inventory from "./pages/Inventory";
 import { useState } from "react";
 
 function App() {
-    const [destination, setDestination] = useState("");
-    const [tripType, setTripType] = useState("Vacation");
 
     return (
-        <div className="container">
+        <BrowserRouter>
+            <Header />
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/New" element={<NewList />} />
+                <Route path="/Inventory" element={<Inventory />} />
 
-            <h1>Create Trip</h1>
+            </Routes>
+            <Footer />
 
-            <form>
-
-                <label>Destination</label>
-
-                <input
-                    type="text"
-                    placeholder="Japan"
-                    value={destination}
-                    onChange={(e) => setDestination(e.target.value)}
-                />
-
-                <br /><br />
-
-                <label>Trip Type</label>
-
-                <select
-                    value={tripType}
-                    onChange={(e) => setTripType(e.target.value)}
-                >
-
-                    <option>Vacation</option>
-
-                    <option>Camping</option>
-
-                    <option>Business</option>
-
-                </select>
-
-                <br /><br />
-
-                <button>
-                    Generate
-                </button>
-
-            </form>
-
-        </div>
+        </BrowserRouter>
     );
 }
 

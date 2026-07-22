@@ -1,0 +1,40 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url("../assets/background.jpg") no-repeat center center fixed;
+}
+
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+
+}
+
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    margin-top: auto;
+}
+
+.nav-links li{
+    margin: 2px 15px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
